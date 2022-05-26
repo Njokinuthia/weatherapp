@@ -3,6 +3,8 @@ import { BrowserRouter, Route } from "react-router-dom"
 import '../App.css';
 import Home from "./Home"
 import Detailed from "./Detailed"
+import ToDo from "./ToDo"
+
 
 const apiKey = "6e8961d072710264f0ad7cfb9d01b809";
 
@@ -69,11 +71,14 @@ function App() {
   return (
     
     <BrowserRouter>
-      <Route>       
+      <Route exact path="/">       
         <Home city={timezone} data={daily} handleSearch={handleSearch} />
-      </Route>
-      <Route>
+      </Route >
+      <Route exact path="/detailed">
         <Detailed current={current}/>
+      </Route>
+      <Route exact path="/todo">
+        <ToDo/>
       </Route>
 
     </BrowserRouter>

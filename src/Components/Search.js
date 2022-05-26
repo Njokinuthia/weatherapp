@@ -4,17 +4,14 @@ import React, { useState } from 'react';
 function Search({handleSearch}) {
   const [search, setSearch] = useState("")
 
-  function handleChange(event) {
-  
-    setSearch(event.target.value)
-    console.log(search)    
+  function handleChange(event) {  
+    setSearch(event.target.value)       
     }
 
   function handleSubmit(event){
     event.preventDefault()
     console.log("submitted")
-    handleSearch(search)  
-    
+    handleSearch(search)      
   }
 
   return (
