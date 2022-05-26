@@ -73,11 +73,11 @@ function App() {
   return (
 
     <BrowserRouter>
-      <div className="container-fluid border">
+      <div className="appContainer border">
         <Navigation />
         <Switch>
           <Route exact path="/">
-            <Home city={timezone} data={daily} handleSearch={handleSearch} />
+            <Home city={timezone} current={current} data={daily} handleSearch={handleSearch} />
           </Route >
           <Route path="/detailed">
             <Detailed current={current} />

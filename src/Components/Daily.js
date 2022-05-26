@@ -6,11 +6,12 @@ import Header from "./Header"
 const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 
-function Daily({ data }) {
+function Daily({ data, current }) {
   // console.log(data)
+  console.log("this is now", current)
   const daily = data.map(day => {
     return <Card
-      key={ day.dt}
+      key={day.dt}
       icon={day.weather[0].icon}
       desc={day.weather[0].main}
       temp={day.temp.day}
@@ -18,9 +19,22 @@ function Daily({ data }) {
   })
 
   return (
-    <>     
-      <div className="daily">{daily}</div>
-    </>
+    <div className="daily ">        
+      
+      <div className="border border-white today" >
+        <div>
+          <h4 className="dayName">Today</h4>
+          {/* <h4>${window.moment(day.dt*1000).format('dddd')}</h4> */}
+        </div>
+        <div>
+          <img alt="icon" src="http.openweather"></img>
+          <p>{current.weather[0].description}</p>
+          <p>{current.temp}°C</p>
+        </div>
+      </div>
+      <div className="d-flex">{daily}</div>
+    </div>
+
   )
 
 }
