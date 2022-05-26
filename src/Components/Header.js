@@ -6,13 +6,12 @@ function Header({city}) {
   
 
   return (
-    <div className="container">
-      <div className="flex border border-dark">
+    
+      <div className="d-flex  justify-content-between">
         <Time />
-        <h3>{city}</h3>
+        <h3 className="city">{city}</h3>
       </div>
-
-    </div>
+    
   )
 
 }

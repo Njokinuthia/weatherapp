@@ -1,9 +1,10 @@
-import React , {useState , useEffect} from 'react';
-import { BrowserRouter, Route } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 import '../App.css';
 import Home from "./Home"
 import Detailed from "./Detailed"
 import ToDo from "./ToDo"
+import Navigation from "./Navigation"
 
 
 const apiKey = "6e8961d072710264f0ad7cfb9d01b809";
@@ -11,7 +12,8 @@ const apiKey = "6e8961d072710264f0ad7cfb9d01b809";
 function App() {
   const [latLon, setLatLon] = useState(undefined); //{lat: 0, lon: 0}
   const [data, setData] = useState(null)
-  const [city , setCity] = useState("")
+  const [city, setCity] = useState("")
+  const [page,setPage]=useState("/")
   let timezone, current, daily;
 
   useEffect(() => {
@@ -49,38 +51,45 @@ function App() {
     current = data.current
     daily = data.daily
 
-  }  
-
-  function handleSearch(searchCity){
-    console.log("city to look for:",searchCity)  
-    function getCoordinates(cityName){
-      fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKey)
-      .then(resp=>resp.json())
-      .then(locationInfo=>{
-        console.log("Location information:",locationInfo)
-        const lat=locationInfo[0].lat
-        const lon = locationInfo[0].lon
-        setLatLon({ lat, lon });
-
-      })
-    }
-    getCoordinates(searchCity)    
   }
 
- 
-  return (
-    
-    <BrowserRouter>
-      <Route exact path="/">       
-        <Home city={timezone} data={daily} handleSearch={handleSearch} />
-      </Route >
-      <Route exact path="/detailed">
-        <Detailed current={current}/>
-      </Route>
-      <Route exact path="/todo">
-        <ToDo/>
-      </Route>
+  function handleSearch(searchCity) {
+    console.log("city to look for:", searchCity)
+    function getCoordinates(cityName) {
+      fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKey)
+        .then(resp => resp.json())
+        .then(locationInfo => {
+          console.log("Location information:", locationInfo)
+          const lat = locationInfo[0].lat
+          const lon = locationInfo[0].lon
+          setLatLon({ lat, lon });
 
+        })
+    }
+    getCoordinates(searchCity)
+  }
+
+
+  return (
+
+    <BrowserRouter>
+      <div className="container-fluid border">
+        <Navigation />
+        <Switch>
+          <Route exact path="/">
+            <Home city={timezone} data={daily} handleSearch={handleSearch} />
+          </Route >
+          <Route path="/detailed">
+            <Detailed current={current} />
+          </Route>
+          <Route path="/todo">
+            <ToDo />
+          </Route>
+          <Route path="*">
+            <h1>404 NOT FOUND</h1>
+          </Route>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }

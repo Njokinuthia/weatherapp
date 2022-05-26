@@ -18,9 +18,8 @@ function Daily({ data }) {
   })
 
   return (
-    <>
-     
-      <div className="container border flex">{daily}</div>
+    <>     
+      <div className="daily">{daily}</div>
     </>
   )
 

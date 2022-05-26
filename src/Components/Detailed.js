@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "./Header"
 
+
+
 function Detailed({ current }) {
   // console.log("current from detailed", current)
   const { pressure, humidity, temp, visibility, } = current
@@ -10,7 +12,7 @@ function Detailed({ current }) {
 
   return (
     <>
-      <Header />
+      <Header />     
       <div className="container border">
         <h4>Detailed Weather Information</h4>
         <div>

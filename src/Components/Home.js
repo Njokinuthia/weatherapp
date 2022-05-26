@@ -6,10 +6,9 @@ import Search from './Search'
 
 function Home({city,data , handleSearch}) {
 
-
   return (
     <>     
-      <Header city={city} />
+      <Header city={city} />     
       <Search handleSearch={handleSearch}/>
       <Daily data={data} />
     </>
