@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from "react-router-dom"
+import { NavLink, useHistory } from "react-router-dom"
 
 const linkStyles = {
   display: "inline-block",
@@ -15,13 +15,25 @@ const linkStyles = {
 
 function Navigation() {
 
- 
+  let history = useHistory ();
+
   return (
     <div>
-     
-      <NavLink to="/" exact style={linkStyles} activeStyle={{ background: "darkblue" }}>Home</NavLink>
-      <NavLink to="/detailed" style={linkStyles} >Detailed</NavLink>
-      <NavLink to="/todo" style={linkStyles} >ToDo</NavLink>
+
+      <NavLink to="/" exact
+        style={linkStyles}
+        activeStyle={{ background: "darkblue" }}
+        onClick={() => history.push("/")}>Home
+      </NavLink>
+      <NavLink to="/detailed"
+        style={linkStyles}
+        onClick={() => history.push("/detailed")}>
+        Detail
+      </NavLink>
+      <NavLink to="/todo"
+        style={linkStyles}
+        onClick={() => history.push("/todo")}>ToDo
+      </NavLink>
     </div>
   )
 }

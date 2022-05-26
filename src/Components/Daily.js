@@ -12,6 +12,7 @@ function Daily({ data, current }) {
   const daily = data.map(day => {
     return <Card
       key={day.dt}
+      dt={day.dt}
       icon={day.weather[0].icon}
       desc={day.weather[0].main}
       temp={day.temp.day}
@@ -26,8 +27,10 @@ function Daily({ data, current }) {
           <h4 className="dayName">Today</h4>
           {/* <h4>${window.moment(day.dt*1000).format('dddd')}</h4> */}
         </div>
-        <div>
-          <img alt="icon" src="http.openweather"></img>
+        <div>    
+          {/* <img src="http://openweathermap.org/img/wn/10d@2x.png"></img>    
+        */}
+      
           <p>{current.weather[0].description}</p>
           <p>{current.temp}°C</p>
         </div>
