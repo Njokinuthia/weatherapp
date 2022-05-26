@@ -9,6 +9,7 @@ const apiKey = "6e8961d072710264f0ad7cfb9d01b809";
 function App() {
   const [latLon, setLatLon] = useState(undefined); //{lat: 0, lon: 0}
   const [data, setData] = useState(null)
+  const [city , setCity] = useState("")
   let timezone, current, daily;
 
   useEffect(() => {
@@ -17,7 +18,7 @@ function App() {
     fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=" + apiKey + "&units={metric}")
       .then((resp) => resp.json())
       .then((weatherData) => {
-        console.log(weatherData)        
+        // console.log(weatherData)        
         setData(weatherData)
       });
   }, [latLon]);
@@ -37,7 +38,7 @@ function App() {
     );
   }, []);
 
-  console.log(data)
+  // console.log(data)
   if (data === null) {
     return
   }
@@ -48,12 +49,28 @@ function App() {
 
   }  
 
+  function handleSearch(searchCity){
+    console.log("city to look for:",searchCity)  
+    function getCoordinates(cityName){
+      fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKey)
+      .then(resp=>resp.json())
+      .then(locationInfo=>{
+        console.log("Location information:",locationInfo)
+        const lat=locationInfo[0].lat
+        const lon = locationInfo[0].lon
+        setLatLon({ lat, lon });
+
+      })
+    }
+    getCoordinates(searchCity)    
+  }
+
  
   return (
     
     <BrowserRouter>
       <Route>       
-        <Home city={timezone} data={daily}  />
+        <Home city={timezone} data={daily} handleSearch={handleSearch} />
       </Route>
       <Route>
         <Detailed current={current}/>

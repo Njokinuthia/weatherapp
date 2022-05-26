@@ -2,10 +2,10 @@ import React from "react";
 import Header from "./Header"
 
 function Detailed({ current }) {
-  console.log("current from detailed", current)
+  // console.log("current from detailed", current)
   const { pressure, humidity, temp, visibility, } = current
   const { description, icon } = current.weather[0]
-  console.log(description)
+  // console.log(description)
 
 
   return (
