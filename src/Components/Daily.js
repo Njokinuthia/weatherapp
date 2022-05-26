@@ -8,7 +8,7 @@ function Daily({ data }) {
   console.log(data)
   const daily = data.map(day=>{
     return <Card icon={day.weather[0].icon}
-     desc = {day.weather[0].description}
+     desc = {day.weather[0].main}
      temp = {day.temp.day}
     />
   })
@@ -16,7 +16,7 @@ function Daily({ data }) {
   return (
     <>
       <p>Daily Data</p>
-      <ul>{daily}</ul>
+      <div className="container border flex">{daily}</div>
     </>
   )
 
