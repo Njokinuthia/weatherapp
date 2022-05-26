@@ -1,15 +1,18 @@
 import React from 'react';
 import Time from "./Time"
 
-function Header() {
 
-
-
+function Header({city}) {
+  
 
   return (
-    <>
-      <Time />
-    </>
+    <div className="container">
+      <div className="flex border border-dark">
+        <Time />
+        <h3>{city}</h3>
+      </div>
+
+    </div>
   )
 
 }

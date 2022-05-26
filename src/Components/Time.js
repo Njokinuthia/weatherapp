@@ -6,7 +6,7 @@ const yearMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep
 
 function Time() {
   // const[time , setTime] = useState({})
-  const[day , setDay] = useState(0)
+  const[day , setDay] = useState()
   const[date , setDate] = useState()
   const[month , setMonth] = useState()
   const[year , setYear] = useState()
@@ -23,8 +23,8 @@ function Time() {
       let year = today.getFullYear();
       let hour = today.getHours();
       let minute = today.getMinutes();
-      let hourIn12Hour = hour<=13?hour%12:hour
-      let amPm = hour>=12?"PM":"AM"  
+      let hourIn12Hour = hour<=13?hour%13:hour
+      let amPm = hour>=12?"Pm":"Am"  
 
       // const determinedTime = {
       //   day:day,
@@ -49,16 +49,14 @@ function Time() {
     return () => clearInterval(interval);
 
   },[minute])
-
   
-  console.log("Month is:" ,minute)
-
+  // console.log("Minute is:" ,minute)
   
   return (
     <>     
-      <div class="">
-        <h3 class="">{hour}:{minute} <span>hrs</span></h3>
-        <h3 class="">{weekDays[day]} , {date} {yearMonths[month]} {year}</h3>
+      <div className="">
+        <h3 className="">{hour}:{minute} <span className="">{amPm}</span></h3>
+        <h3 className="">{weekDays[day]}, {date} {yearMonths[month]} {year}</h3>
       </div>
     </>
 

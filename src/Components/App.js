@@ -5,9 +5,9 @@ import Home from "./Home"
 
 function App() {
   return (
+    
     <BrowserRouter>
-      <Route>
-        <p>My app goes here</p>
+      <Route>       
         <Home />
       </Route>
 
