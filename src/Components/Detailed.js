@@ -17,7 +17,7 @@ function Detailed({ current }) {
         <h4 className="text-center display-4 pt-4 fw-bold">Detailed Weather Information</h4>
         <div>
           <div className="d-flex justify-content-around detailed-box">
-            <img src={icon} alt="icon"></img>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon"></img>
             <p>{description}</p>
             <p>{temp}C</p>
           </div>

@@ -7,7 +7,7 @@ const linkStyles = {
   width: "80px",
   padding: "5px",
   margin: "0 6px 6px",
-  background: "black",
+  background: "black",  
   textDecoration: "none",
   color: "white",
 };
@@ -30,10 +30,10 @@ function Navigation() {
         onClick={() => history.push("/detailed")}>
         Detail
       </NavLink>
-      {/* <NavLink to="/todo"
+      <NavLink to="/todo"
         style={linkStyles}
         onClick={() => history.push("/todo")}>ToDo
-      </NavLink> */}
+      </NavLink>
     </div>
   )
 }

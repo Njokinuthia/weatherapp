@@ -11,6 +11,7 @@ function Daily({ data, current }) {
   console.log("this is now", current)
   const daily = data.map(day => {
     return <Card
+    day={weekDays[day.index]}
       key={day.dt}
       dt={day.dt}
       icon={day.weather[0].icon}
@@ -25,6 +26,7 @@ function Daily({ data, current }) {
       <div className="border border-white today" >
         <div>
           <h4 className="dayName">Today</h4>
+
           {/* <h4>${window.moment(day.dt*1000).format('dddd')}</h4> */}
         </div>
         <div>    

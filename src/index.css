@@ -91,7 +91,8 @@ body {
   padding:15px;
   padding-right: 40px;
   border-radius: 10px;
-  background: rgba(0,0,0,0.2)
+  background: rgba(0,0,0,0.2);
+ 
 }
 
 .detailed{
@@ -109,6 +110,19 @@ body {
 .search{
   width:80%;
   margin:auto;
-  margin-top: 30px
-
+  margin-top: 40px
+}
+.login{  
+    background: rgba(24, 24, 24, 0.5);
+    border-radius: 10px;
+    width: 50%;
+    margin:auto;
+    height:60vh;
+    margin-top:50px 
+}
+.input{
+  border-radius:20px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;  
 }

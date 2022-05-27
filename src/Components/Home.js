@@ -4,12 +4,12 @@ import Daily from './Daily'
 import Search from './Search'
 
 
-function Home({ city, data, handleSearch , current }) {
+function Home({ city, data, handleSearch, current }) {
 
   return (
     <>
       <div className="space">
-        <Header city={city } icon={current.weather[0].icon}/>
+        <Header city={city} icon={current.weather[0].icon} />
         <Search handleSearch={handleSearch} />
       </div>
 

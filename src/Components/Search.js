@@ -22,7 +22,7 @@ function Search({ handleSearch }) {
           value={search}
           onChange={handleChange}
           required></input>
-        <input type="submit" value="searchIcon"></input>
+        <input type="submit" value="search"></input>
       </form>
     </div>
   )

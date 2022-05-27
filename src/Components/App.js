@@ -19,12 +19,12 @@ function App() {
   useEffect(() => {
     if (latLon === undefined) return;
     const { lat, lon } = latLon;
-    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=" + apiKey + "&units={metric}")
-      .then((resp) => resp.json())
-      .then((weatherData) => {
-        console.log(weatherData)        
-        setData(weatherData)
-      });
+    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=" + apiKey + "&units={metric}")
+    //   .then((resp) => resp.json())
+    //   .then((weatherData) => {
+    //     console.log(weatherData)        
+    //     setData(weatherData)
+    //   });
   }, [latLon]);
 
   useEffect(() => {
@@ -76,15 +76,15 @@ function App() {
       <div className="appContainer border">
         <Navigation />
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <Home city={timezone} current={current} data={daily} handleSearch={handleSearch} />
           </Route >
           <Route path="/detailed">
             <Detailed current={current} />
-          </Route>
-          {/* <Route path="/todo">
-            <ToDo />
           </Route> */}
+          <Route path="/todo">
+            <ToDo />
+          </Route>
           <Route path="*">
             <h1>404 NOT FOUND</h1>
           </Route>
