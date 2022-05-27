@@ -10,7 +10,7 @@ function Home({ city, data, handleSearch, current }) {
     <>
       <div className="space">
         <Header city={city} icon={current.weather[0].icon} />
-        <Search handleSearch={handleSearch} />
+        <Search handleSearch={handleSearch}  />
       </div>
 
       <Daily data={data}  />

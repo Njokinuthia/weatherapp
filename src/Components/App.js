@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import '../App.css';
 import Home from "./Home"
 import Detailed from "./Detailed"
 import ToDo from "./ToDo"
-import Navigation from "./Navigation"
+import NavBar from "./NavBar"
 
 
 const apiKey = "6e8961d072710264f0ad7cfb9d01b809";
@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     if (latLon === undefined) return;
     const { lat, lon } = latLon;
-    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely &appid=" + apiKey + "&units={metric}")
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely &appid=" + apiKey + "&units={metric}")
       .then((resp) => resp.json())
       .then((weatherData) => {
         console.log(weatherData)       
@@ -72,9 +72,9 @@ function App() {
 
   return (
 
-    <BrowserRouter>
+   
       <div className="appContainer border">
-        <Navigation />
+        <NavBar/>
         <Switch>
           <Route exact path="/">
             <Home city={timezone} current={current} data={daily} handleSearch={handleSearch} />
@@ -90,7 +90,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </BrowserRouter>
+   
   );
 }
 

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Card from "./Card"
 import Header from "./Header"
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 
 const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
@@ -12,6 +14,7 @@ function Daily({ data }) {
   const daily = data.map(day => {
 
     console.log(day.weather[0].icon)
+   
     return <Card
     day={weekDays[day.index]}
       key={day.dt}

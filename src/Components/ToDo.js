@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import {createUserWithEmailAndPassword} from "firebase/auth"
+import {auth} from "../firebase-config"
 
 
 
@@ -12,10 +14,18 @@ function ToDO() {
     setLogin(hideForm => !hideForm)
     login ? console.log("login") : console.log("new account")
   }
+  // firebase
+  async function logout() {
+
+  }
 
   function Login() {
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
+
+    async function login() {
+
+    }
 
     function handleLoginSubmit(event) {
       event.preventDefault()
@@ -55,6 +65,17 @@ function ToDO() {
     const [newPassword, setNewPassword] = useState("")
     const [email, setEmail] = useState("")
 
+    // firebase
+    async function register() {
+      try{
+        const user = await createUserWithEmailAndPassword(auth,email,newPassword)
+        console.log(user)
+      }
+      catch(error){
+        console.log(error.message)
+      }
+
+    }
 
 
     function handleNewAccountSubmit(event) {
@@ -89,7 +110,7 @@ function ToDO() {
             <div>
               <input type="password" placeholder="Confirm password" required />
             </div>
-            <button type="submit" className="btn">Continue</button>
+            <button onClick={register} type="submit" className="btn">Create</button>
           </div>
           <p>
             <a onClick={toggleForms} href="./" >Already have an account? Sign in</a>

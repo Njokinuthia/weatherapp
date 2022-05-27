@@ -17,12 +17,13 @@ function Search({ handleSearch }) {
   return (
     <div >
       <form className="search center ml-4" onSubmit={handleSubmit}>
-        <input type="text"
+        <input
+         type="text"
           placeholder='search for city'
           value={search}
           onChange={handleChange}
           required></input>
-        <input type="submit" value="search"></input>
+        <input className="searchBtn" type="submit" value="search"></input>
       </form>
     </div>
   )

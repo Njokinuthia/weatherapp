@@ -108,9 +108,9 @@ body {
 
 }
 .search{
-  width:80%;
+  width:40%;
   margin:auto;
-  margin-top: 40px
+  margin-top: 20px
 }
 .login{  
     background: rgba(24, 24, 24, 0.5);
@@ -157,8 +157,7 @@ body {
   /* background-color: white; */
 
 }
-input{
- 
+input{ 
   background-color: rgba(243, 234, 234, 0.8);
   color: white;
   width: 90%;
@@ -177,4 +176,13 @@ input{
 
 .hidden{
   display: none;
+}
+
+.searchBtn{
+  width: 35%;
+  background: rgba(24, 23, 23, 0.8);
+  color: white
+
+
+
 }

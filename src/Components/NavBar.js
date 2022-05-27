@@ -13,13 +13,12 @@ const linkStyles = {
 };
 
 
-function Navigation() {
+function NavBar() {
 
   let history = useHistory ();
 
   return (
     <div>
-
       <NavLink to="/" exact
         style={linkStyles}
         activeStyle={{ background: "darkblue" }}
@@ -37,4 +36,4 @@ function Navigation() {
     </div>
   )
 }
-export default Navigation
+export default NavBar
