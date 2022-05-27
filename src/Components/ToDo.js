@@ -32,14 +32,15 @@ function ToDO() {
     return (
       <form className="formContainer" onSubmit={handleLoginSubmit}>
         <h1>Login</h1>
-        <div >
-          <input type="text" placeholder="Username" value={name} onChange={(e) => setName(e.target.value)} required />
-        </div>
         <div>
-          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <div >
+            <input type="text" placeholder="Username" value={name} onChange={(e) => setName(e.target.value)} required />
+          </div>
+          <div>
+            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          </div>
+          <button type="submit" className="btn">Continue</button>
         </div>
-        <button type="submit" className="btn">Continue</button>
-
         <p>
           <a onClick={toggleForms} href="./" >Don't have an account? Create account</a>
         </p>
@@ -54,7 +55,7 @@ function ToDO() {
     const [newPassword, setNewPassword] = useState("")
     const [email, setEmail] = useState("")
 
-    
+
 
     function handleNewAccountSubmit(event) {
       event.preventDefault()
@@ -75,18 +76,21 @@ function ToDO() {
         <form className="formContainer" onSubmit={handleNewAccountSubmit}>
           <h1 >Create Account</h1>
           <div>
-            <input type="text" placeholder="Username" value={newName} onChange={(e) => setNewName(e.target.value)} required />
+
+            <div>
+              <input type="text" placeholder="Username" value={newName} onChange={(e) => setNewName(e.target.value)} required />
+            </div>
+            <div >
+              <input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            </div>
+            <div>
+              <input type="password" placeholder="Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
+            </div>
+            <div>
+              <input type="password" placeholder="Confirm password" required />
+            </div>
+            <button type="submit" className="btn">Continue</button>
           </div>
-          <div >
-            <input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          </div>
-          <div>
-            <input type="password" placeholder="Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
-          </div>
-          <div>
-            <input type="password" placeholder="Confirm password" required />
-          </div>
-          <button type="submit" className="btn">Continue</button>
           <p>
             <a onClick={toggleForms} href="./" >Already have an account? Sign in</a>
           </p>
