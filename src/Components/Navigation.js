@@ -30,10 +30,10 @@ function Navigation() {
         onClick={() => history.push("/detailed")}>
         Detail
       </NavLink>
-      <NavLink to="/todo"
+      {/* <NavLink to="/todo"
         style={linkStyles}
         onClick={() => history.push("/todo")}>ToDo
-      </NavLink>
+      </NavLink> */}
     </div>
   )
 }

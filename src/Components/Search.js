@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
 
 
-function Search({handleSearch}) {
+function Search({ handleSearch }) {
   const [search, setSearch] = useState("")
 
-  function handleChange(event) {  
-    setSearch(event.target.value)       
-    }
+  function handleChange(event) {
+    setSearch(event.target.value)
+  }
 
-  function handleSubmit(event){
+  function handleSubmit(event) {
     event.preventDefault()
     console.log("submitted")
-    handleSearch(search)      
+    handleSearch(search)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text"
-        placeholder='search for city'
-        value={search}
-        onChange={handleChange}
-        required></input>
-      <input type="submit" value="searchIcon"></input>
-    </form>
+    <div >
+      <form className="search center ml-4" onSubmit={handleSubmit}>
+        <input type="text"
+          placeholder='search for city'
+          value={search}
+          onChange={handleChange}
+          required></input>
+        <input type="submit" value="searchIcon"></input>
+      </form>
+    </div>
   )
 
 }

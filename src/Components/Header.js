@@ -2,16 +2,19 @@ import React from 'react';
 import Time from "./Time"
 
 
-function Header({city}) {
-  
+function Header({ city, icon }) {
+
 
   return (
-    
-      <div className="d-flex  justify-content-between">
-        <Time />
+
+    <div className="d-flex  justify-content-between">
+      <Time />
+      <div>
         <h3 className="city">{city}</h3>
+        <img src="" alt="icon"></img>
       </div>
-    
+    </div>
+
   )
 
 }
