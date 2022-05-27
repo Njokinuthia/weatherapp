@@ -19,10 +19,10 @@ function App() {
   useEffect(() => {
     if (latLon === undefined) return;
     const { lat, lon } = latLon;
-    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=" + apiKey + "&units={metric}")
+    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely &appid=" + apiKey + "&units={metric}")
       .then((resp) => resp.json())
       .then((weatherData) => {
-        console.log(weatherData)        
+        console.log(weatherData)       
         setData(weatherData)
       });
   }, [latLon]);

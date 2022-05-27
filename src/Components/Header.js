@@ -11,7 +11,9 @@ function Header({ city, icon }) {
       <Time />
       <div>
         <h3 className="city">{city}</h3>
-        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon"></img>
+        {/* <img src={`http://openweathermap.org/img/wn/ ${icon} @2x.png`} alt="icon"></img> */}
+        <img alt="icon" src={`https://openweathermap.org/img/wn/10d@2x.png`}></img>
+
       </div>
     </div>
 

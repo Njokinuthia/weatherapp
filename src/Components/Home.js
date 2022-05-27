@@ -13,7 +13,7 @@ function Home({ city, data, handleSearch, current }) {
         <Search handleSearch={handleSearch} />
       </div>
 
-      <Daily data={data} current={current} />
+      <Daily data={data}  />
     </>
   )
 }
