@@ -99,7 +99,7 @@ function ToDO() {
 
 
   return (
-    <div>
+    <div className="form">
       {login ? <Login /> : <CreateAccount />}
     </div>
   )
