@@ -137,11 +137,9 @@ body {
   align-items: center;
   justify-items: center;
   font-size: 18px;
-  /* background:url("https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773"); */
-  background: url("https://images.unsplash.com/photo-1646688829907-1694d43b103a?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG9kbyUyMGpvdXJuYWx8ZW58MHx8MHx8&auto=format&fit=crop&w=400");
   background-repeat: no-repeat;
   background-size: cover;
-  /* color: white; */
+  color: white;
 }
 
 .formContainer {
@@ -150,15 +148,17 @@ body {
   margin: 1rem;
   padding: 2rem;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
-  border-radius: 10px;  
-  background: transparent;
-  /* background-color: rgba(49, 231, 207, 0.4); */
-  background-color: white;
+  border-radius: 10px; 
+  border: 1px soid white;
+  /* background: transparent; */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: white; */
 
 }
 input{
-  background: transparent;
-  /* color: white; */
+  /* background: transparent; */
+  background-color: rgba(243, 234, 234, 0.8);
+  color: white;
   width: 70%;
   border-radius: 5px;
   margin:10px 0px;
@@ -168,6 +168,8 @@ input{
 .btn{
   padding: 5px 5px;
   border-radius: 5px;
+  background-color: rgba(243, 234, 234, 0.8);
+
 }
 
 .hidden{
