@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
-import {createUserWithEmailAndPassword} from "firebase/auth"
+import {createUserWithEmailAndPassword , 
+  onAuthStateChange, 
+  onAuthStateChanged,
+  signOut
+} from "firebase/auth"
 import {auth} from "../firebase-config"
+import {useHistory} from "react-router-dom"
 
 
 
 function ToDO() {
 
   const [login, setLogin] = useState(true)
+
+  const[userLoggedIn , setUserLoggedIn] = useState({})
+
+  const history = useHistory();
+
+  // onAuthStateChanged(auth,(currentUser)=>{
+  //   setUserLoggedIn(currentUser)
+  // })
+
 
   function toggleForms(event) {
     event.preventDefault()
@@ -15,7 +29,14 @@ function ToDO() {
     login ? console.log("login") : console.log("new account")
   }
   // firebase
-  async function logout() {
+  // async function logout() {
+  //   await signOut(auth)
+
+  // }
+
+  function logout() {
+    auth.signOut()
+    history.push("/")
 
   }
 
@@ -125,7 +146,9 @@ function ToDO() {
 
   return (
     <div className="form">
-      {login ? <Login /> : <CreateAccount />}
+      {login ? <Login  /> : <CreateAccount />}
+      {/* <h3>Welcome back</h3>{userLoggedIn.email} */}
+      {/* <button onClick={logout}>Signout</button> */}
     </div>
   )
 

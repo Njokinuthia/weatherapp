@@ -16,7 +16,7 @@ function Card({ icon, desc, temp, dt }) {
 
 
       <p>{desc}</p>
-      <p>{temp}°C</p>
+      <p>Temp: {temp}</p>
     </div>
   )
 
