@@ -5,7 +5,7 @@ import {createUserWithEmailAndPassword ,
   signOut
 } from "firebase/auth"
 import {auth} from "../firebase-config"
-import {useHistory} from "react-router-dom"
+import {useHistory } from "react-router-dom"
 
 
 
@@ -16,6 +16,8 @@ function ToDO() {
   const[userLoggedIn , setUserLoggedIn] = useState({})
 
   const history = useHistory();
+
+ 
 
   // onAuthStateChanged(auth,(currentUser)=>{
   //   setUserLoggedIn(currentUser)
@@ -95,9 +97,8 @@ function ToDO() {
       catch(error){
         console.log(error.message)
       }
-
+      history.push("/")
     }
-
 
     function handleNewAccountSubmit(event) {
       event.preventDefault()
@@ -137,10 +138,8 @@ function ToDO() {
             <a onClick={toggleForms} href="./" >Already have an account? Sign in</a>
           </p>
         </form>
-
       </>
     )
-
   }
 
 

@@ -22,7 +22,10 @@ code {
 }
 
 body {
-  background: url("/src/Assets/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg");
+  /* background: url("/src/Assets/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg") !important; */
+  /* background-image:url("https://media.istockphoto.com/photos/clouds-on-sky-picture-id184103864?b=1&k=20&m=184103864&s=170667a&w=0&h=ZngznsmOs4gnb0bRP13q5RFXY-cv-BHZJNjJXb6ffyk="); */
+  background-image: url("./Assets/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg") !important;
+
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -32,10 +35,9 @@ body {
 
 .appContainer {
   color: white;
-  font-weight: bold;
-
-  
+  font-weight: bold;  
   background: rgba(24, 24, 24, 0.5);
+  
   height: 100vh;
 }
 .space{
